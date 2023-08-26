@@ -7,7 +7,11 @@ def bonus_calculation(start_date_str, sick_leave_last_date_str=None):
     start_date = convert_string_to_date(start_date_str)
     sick_leave_last_date = convert_string_to_date(sick_leave_last_date_str)
     validate_input_parameters(start_date, sick_leave_last_date)
-    return calculate_bonus_start_date(start_date) + calculate_bonus_sick_leave(sick_leave_last_date)
+    experience_bonus = calculate_bonus_start_date(start_date)
+    if experience_bonus == 0:
+        return 0
+    else:
+        return experience_bonus + calculate_bonus_sick_leave(sick_leave_last_date)
 
 
 def convert_string_to_date(date_string):
