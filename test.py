@@ -33,6 +33,8 @@ def test_bonus_based_on_working_years_and_sick_leave(er):
                                 # incorrect data format
                                 ("26/04/2021", 4, "Please correct the data, it should be in format %d/%m/%Y"),
                                 # incorrect data format
+                                ("", "", "Please correct the data, it should be in format %d/%m/%Y"),
+                                # incorrect data format
                                 ("15/07/2024", "26/08/2024", "The person hasn't been hired yet!")
                                 # date of employment in the future
                                 ])
